@@ -1,11 +1,15 @@
+
+
+
 import java.util.ArrayList;
 
     public class ExerciseBinaryTree {
+        //Finding max depth of tree : 
     public static int maxDepth(TreeNode root) {
         if (root == null) return 0;
         return Integer.max(maxDepth(root.left) + 1, maxDepth(root.right) + 1);
     }
-
+    //check if tree is BTS:
     public static boolean isValidBST(TreeNode root) {
         ArrayList<Integer> res = new ArrayList<Integer>();
         inorder(root, res);
@@ -14,7 +18,7 @@ import java.util.ArrayList;
         }
         return true;
     }
-
+    //Inorder function - arrange tree in array
     public static void inorder(TreeNode root, ArrayList<Integer> res) {
         if (root == null) return;
 
@@ -23,6 +27,7 @@ import java.util.ArrayList;
         inorder(root.right, res);
     }
 }
+//another solution
 
 //class Solution {
 //    public boolean isValidBST(TreeNode root) {
